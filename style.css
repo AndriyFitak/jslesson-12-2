@@ -1,0 +1,13 @@
+.shops{
+    display: flex;
+    width: 1500px;
+    margin-left: 21%;
+}
+.product-card{
+    width: 300px;
+    padding-left: 30px;
+    
+}
+h2{
+    margin-left: 55px;
+}
