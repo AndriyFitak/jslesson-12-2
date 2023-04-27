@@ -4,10 +4,98 @@
     margin-left: 21%;
 }
 .product-card{
-    width: 300px;
+    width: 280px;
     padding-left: 30px;
+    margin-top: 100px;
     
 }
 h2{
-    margin-left: 55px;
+    margin-left: 30px;
+}
+.clear{
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+}
+.cards{
+    width: 950px;
+    margin-left: 300px;
+}
+.cart{
+    display: flex;
+    justify-content: space-around;
+}
+.header {
+    height: 100px;
+    margin: -10px;
+    background-color: rgb(117, 170, 39);
+}
+  .header_logo {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FFFFFF;
+    padding-top: 30px;
+    padding-left: 200px;
+  }
+  .header_nav {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: -60px;
+  }
+  .header_nav_p {
+    padding-left: 20px;
+  }
+  .header_purse {
+    display: flex;
+    margin-left: 1250px;
+    color: #FFFFFF;
+    margin-top: -80px;
+  }
+
+.purse-text{
+    position: absolute;
+    margin-left: -130px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+.purse-result{
+    position: absolute;
+    margin-left: -32px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+.value{
+    margin-top: 40px;
+    margin-left: 50px;
+    display: flex;
+}
+.number{
+    width: 130px;
+    background-color: rgb(255, 255, 255);
+    margin-right: 10px;
+    border: 0px;
+    margin-left: -20px;
+}
+.btn-purse{
+    width: 90px;
+    height: 30px;
+    background-color: greenyellow;
+    border: none;
 }

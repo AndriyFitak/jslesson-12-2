@@ -8,29 +8,50 @@
     <title>Document</title>
 </head>
 <body>
+    <header class="header">
+        <h2 class="header_logo">GreenShop</h2>
+        <div class="header_nav">
+            <p class="header_nav_p">Home</p>
+            <p class="header_nav_p">Page</p>
+            <p class="header_nav_p">About me</p>
+            <p class="header_nav_p">Portfolio</p>
+        </div>
+        <div class="header_purse"> 
+            <p class="purse-text">Purse :</p>
+            <p class="purse-result" id="result">0</p>
+            <label class="purse-label" for="number"></label>
+            <div class="value"> 
+            <input placeholder="Поповнити баланс" class="number" type="text" id="number">
+            <button class="btn-purse" onclick="addNumber()">Поповнити</button>
+            </div>
+        </div>
+    </header>
     <div class="shops">
     <div class="product-card" id="product-card">
         <img src="./download-removebg-preview.png" alt="">
-        <h2>Гортензія</h2>
+        <h2>Гортензія ціна: <span id="price-card">50</span></h2>
         <p>Гарно квітучий декоративний кущ</p>
         <button onclick="addToCart()">Додати в кошик</button>
     </div>
     <div class="product-card" id="product-card">
         <img src="./download-removebg-preview.png" alt="">
-        <h2>Гортензія</h2>
+        <h2>Гортензія ціна:50</h2>
         <p>Гарно квітучий декоративний кущ</p>
         <button onclick="addToCart()">Додати в кошик</button>
     </div>
     <div class="product-card" id="product-card">
         <img src="./download-removebg-preview.png" alt="">
-        <h2>Гортензія</h2>
+        <h2>Гортензія ціна:50</h2>
         <p>Гарно квітучий декоративний кущ</p>
         <button onclick="addToCart()">Додати в кошик</button>
     </div>
     </div>
         <hr>
-        <h3>Кошик</h3>
-        <div id="cart"></div>
+        
+        <h3 class="clear">Кошик</h3>
+        <div class="cards">
+        <div class="cart" id="cart"></div>
+        </div>
     <script src="./script.js"></script>
 </body>
 </html>

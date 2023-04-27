@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Додавання товарів до кошика</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="product-card">
+		<h3>Товар 1</h3>
+		<p>Ціна: $50</p>
+	</div>
+	<button onclick="addToCart()">Додати в кошик</button>
+	<div id="cart">
+		<h2>Кошик</h2>
+	</div>
+	<p id="balance">Баланс: $100</p>
+
+	<script>
+		function addToCart() {
+			var productCard = document.getElementById("product-card");
+			var cart = document.getElementById("cart");
+			var newCartItem = document.createElement("div");
+			var price = 50; // ціна товару
+			var balance = 100; // наш баланс
+			if (price > balance) {
+				alert("Недостатньо коштів!");
+				return; // зупинити функцію, якщо немає коштів
+			}
+			newCartItem.innerHTML = productCard.innerHTML + '<button onclick="removeCartItem(this)">Видалити</button>';
+			cart.appendChild(newCartItem);
+			balance -= price; // зменшуємо баланс після покупки
+			document.getElementById("balance").innerHTML = "Баланс: $" + balance;
+		}
+
+		function removeCartItem(item) {
+			item.parentNode.remove();
+		}
+	</script>
+</body>
+</html>
