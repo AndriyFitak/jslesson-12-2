@@ -1,16 +1,23 @@
+localStorage.setItem ("balance", "50")
+
+
 function addToCart() {
     var productCard = document.getElementById("product-card");
     var cart = document.getElementById("cart");
     var newCartItem = document.createElement("div");
     var price = document.getElementById("price-card")
-    if (price > result){
+    let priceValue = parseInt(price.innerText)
+    if (priceValue > result){
       alert("Недостатьньо коштів")
+      console.log (parseInt(price.innerText))
+      console.log (typeof(price))
       return 
     } 
     newCartItem.innerHTML = productCard.innerHTML + '<button onclick="removeCartItem(this)">Видалити</button>';
     cart.appendChild(newCartItem);
     result -= price
     result.innerHTML =  "Баланс: $" + result;
+    result.innerText = priceValue - price
   }
 
 function removeCartItem(item) {
