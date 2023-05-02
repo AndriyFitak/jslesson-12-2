@@ -99,3 +99,19 @@ h2{
     background-color: greenyellow;
     border: none;
 }
+.plus-and-minus{
+    display: flex;
+    margin-left: 80px;
+}
+.minus{
+    position: absolute;
+    height: 20px;
+    margin-top: 15px;
+    margin-left: -30px;
+}
+.plus{
+    position: absolute;
+    height: 20px;
+    margin-top: 15px;
+    margin-left: 30px;
+}
