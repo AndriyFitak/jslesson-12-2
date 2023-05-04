@@ -1,5 +1,31 @@
-localStorage.setItem ("balance", "50")
 
+
+function saveCartToLocalStorage() {
+  var cartItems = document.querySelectorAll("#cart > div");
+  var cartItemsData = [];
+  for (var i = 0; i < cartItems.length; i++) {
+    cartItemsData.push(cartItems[i].innerHTML);
+  }
+  localStorage.setItem("cartItems", JSON.stringify(cartItemsData));
+}
+
+function loadCartFromLocalStorage() {
+  var cartItemsData = localStorage.getItem("cartItems");
+  if (cartItemsData) {
+    var cartItems = JSON.parse(cartItemsData);
+    var cart = document.getElementById("cart");
+    for (var i = 0; i < cartItems.length; i++) {
+      var newCartItem = document.createElement("div");
+      newCartItem.innerHTML = cartItems[i];
+      cart.appendChild(newCartItem);
+      var price = parseInt(newCartItem.querySelector(".price-card").innerText);
+      result -= price;
+      cartCount++;
+    }
+  }
+}
+
+loadCartFromLocalStorage();
 var cartCount = 0;
 
 function addToCart() {
@@ -34,32 +60,32 @@ function addToCart() {
   let btnPlus = newCartItem.querySelector(".plus");
   let priceText = newCartItem.querySelector(".priceText");
   btnMinus.addEventListener("click", function() {
-    priceValue -= 50;
-    if (priceValue < 0) {
-      priceValue = 0;
-    }
-    price.innerText = priceValue;
+    priceValue -= 1;
+    // if (priceValue < 0) {
+    //   priceValue = 0;
+    // }
+    priceText.innerText = priceValue;
   });
   btnPlus.addEventListener("click", function() {
-    priceValue += 50;
-    price.innerText = priceValue;
+    priceValue += 1;
+    priceText.innerText = priceValue;
   });
+  saveCartToLocalStorage();
 }
 
 
 function removeCartItem(item) {
   item.parentNode.remove();
   cartCount--;
+  saveCartToLocalStorage();
 }
-
-
-
 
 function addNumber() {
   var numberInput = document.getElementById("number");
   var number = parseInt(numberInput.value);
   var result = document.getElementById("result");
   result.innerHTML = parseInt(result.innerHTML) + number;
+  localStorage.setItem('result', result.innerHTML);
 
   var counter = 0;
   while (counter < 3) {
@@ -68,12 +94,25 @@ function addNumber() {
       alert("Успішний вхід!");
       break;
     } else {
-        alert("Невірний логін або пароль")
-
+      alert("Невірний логін або пароль")
     }
     counter++;
     numberInput.value = ''
   }
-  
 }
+
+function clearBalance() {
+  var result = document.getElementById("result");
+  result.innerHTML = "0";
+  localStorage.removeItem('result');
+}
+ 
+window.onload = function() {
+  var result = document.getElementById("result");
+  var savedResult = localStorage.getItem('result');
+  if (savedResult) {
+    result.innerHTML = savedResult;
+  }
+}
+
 
